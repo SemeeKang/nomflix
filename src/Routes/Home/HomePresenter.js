@@ -12,13 +12,13 @@ const Container = styled.div`
 const HomePresenter = ({nowPlaying, upcoming, popular, loading, error}) => loading ? <Loader /> : (
     <Container>
         {upcoming && upcoming.length > 0 && (
-            <Section title="Upcoming Movies">{upcoming.map(movie => movie.title)}</Section>
+            <Section title="Upcoming Movies">{upcoming.map(movie => <sapn key={movie.id}>{movie.title}</sapn>)}</Section>
         )}
         {nowPlaying && nowPlaying.length > 0 && (
-            <Section title="Now Playing">{nowPlaying.map(movie => movie.title)}</Section>
+            <Section title="Now Playing">{nowPlaying.map(movie => <sapn key={movie.id}>{movie.title}</sapn>)}</Section>
         )}
         {popular && popular.length > 0 && (
-            <Section title="Popular Movies">{popular.map(movie => movie.title)}</Section>
+            <Section title="Popular Movies">{popular.map(movie => <sapn key={movie.id}>{movie.title}</sapn>)}</Section>
         )}
     </Container>
 );
